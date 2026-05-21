@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScentNest | Premium Oil Perfumes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-spray-can"></i>
+                ScentNest
+            </a>
+            <div class="nav-controls">
+                <div class="currency-selector">
+                    <button class="currency-btn" onclick="toggleCurrency()">
+                        <span id="current-currency">🇬🇧 GBP</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="currency-dropdown" id="currency-dropdown">
+                        <div class="currency-option" onclick="setCurrency('GBP', '£', 'UK')">
+                            <span>🇬🇧</span> GBP - UK
+                        </div>
+                        <div class="currency-option" onclick="setCurrency('USD', '$', 'US')">
+                            <span>🇺🇸</span> USD - US
+                        </div>
+                        <div class="currency-option" onclick="setCurrency('NGN', '₦', 'Nigeria')">
+                            <span>🇳🇬</span> NGN - Nigeria
+                        </div>
+                        <div class="currency-option" onclick="setCurrency('GHS', '₵', 'Ghana')">
+                            <span>🇬🇭</span> GHS - Ghana
+                        </div>
+                    </div>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="contact-btn" onclick="scrollToContact()" title="Contact Us">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </button>
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    Cart
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ScentNest Premium Oil Perfumes</h1>
+            <p>Elevate your presence with our expertly crafted fragrance sprays. From rich woody notes to refreshing floral blends, experience a lasting scent with every spray..</p>
+            <div class="hero-badges">
+                <div class="badge">
+                    <i class="fas fa-leaf"></i>
+                    <span>100% Natural</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Fast Delivery</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-award"></i>
+                    <span>Premium Quality</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="section-header">
+            <h2>Our Collection</h2>
+            <p>Discover our range of premium oil sprays crafted for the modern lifestyle</p>
+        </div>
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be rendered by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Organic Sourcing</h3>
+                <p>All our oils are sourced from certified organic farms, ensuring the purest quality for your family.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h3>Precision Spray</h3>
+                <p>Our patented nozzle technology delivers a fine, even mist for perfect coverage every time.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <h3>Eco-Friendly</h3>
+                <p>Reusable and refillable bottles made from recycled materials. Good for you, great for the planet.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Health First</h3>
+                <p>Pure luxury, no harsh chemicals. Just premium natural fragrance oils in an elegant spray format.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Have a question or want to place a custom order? Send us a message or email directly and we’ll reply quickly.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-details">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:amuzubismarkosei4@gmail.com">amuzubismarkosei4@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Phone</h3>
+                    <a href="tel:+233 24 128 7968">+233 24 128 7968</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Online boutique with global shipping.</p>
+                </div>
+            </div>
+            <form class="contact-form" id="contact-form" onsubmit="submitContactForm(event)">
+                <div class="form-row">
+                    <label>
+                        Your Name
+                        <input type="text" name="name" placeholder="Jane Doe" required>
+                    </label>
+                    <label>
+                        Your Email
+                        <input type="email" name="email" placeholder="jane@example.com" required>
+                    </label>
+                </div>
+                <label>
+                    Message
+                    <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
+                </label>
+                <button type="submit" class="primary-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">ScentNest</div>
+            <p class="footer-text">Premium oil perfumes for the modern lifestyle. Quality you can feel, fragrances you’ll love.</p>
+            <p class="footer-contact">Email: <a href="mailto:amuzubismarkosei4@gmail.com">amuzubismarkosei4@gmail.com</a></p>
+            
+                © 2024 SentNest. All rights reserved. Crafted with care.
+            </div>
+            <div class="footer-signature">
+                Powered by @4lph4
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeImageModal()">×</button>
+            <img id="modal-img" src="" alt="">
+        </div>
+    </div>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items rendered by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span class="cart-total-label">Total</span>
+                <span class="cart-total-amount" id="cart-total">£0.00</span>
+            </div>
+            <a href="#" class="checkout-btn" id="checkout-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Order via WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Added to cart!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
