@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     
+    <style>
+        .logo-image { display: block; width: 76px; height: 76px; object-fit: contain; flex: 0 0 auto; }
+        @media (max-width: 600px) { .logo-image { width: 60px; height: 60px; } }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo">
-                <i class="fas fa-spray-can"></i>
-                ScentNest
+            <a href="#" class="logo" aria-label="ScentNest home">
+                <img src="scentnest-logo.png" alt="ScentNest — Elevate Your Essence" class="logo-image">
             </a>
             <div class="nav-controls">
                 <div class="currency-selector">
