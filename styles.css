@@ -1145,7 +1145,7 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary);
         }
-logo-image {
+.logo-image {
     display: block;
     width: 76px;
     height: 76px;
