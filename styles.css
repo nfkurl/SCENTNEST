@@ -1158,3 +1158,17 @@
         height: 60px;
     }
 }
+.logo-image {
+    display: block;
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    flex: 0 0 auto;
+}
+
+@media (max-width: 600px) {
+    .logo-image {
+        width: 60px;
+        height: 60px;
+    }
+}
